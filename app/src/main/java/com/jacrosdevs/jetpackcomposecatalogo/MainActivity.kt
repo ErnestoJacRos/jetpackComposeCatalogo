@@ -19,9 +19,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,10 +41,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeCatalogoTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                         .padding(16.dp)
                 ) {
-                    ConstraintChain()
+                    MyStateCompose()
                 }
             }
         }
@@ -47,23 +53,70 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun MyStateCompose(modifier: Modifier = Modifier) {
+    //podemos usar "by or =" en el state pero con "by"
+    // importamos getValue y setValue y con "=" accedemos
+    //a la variable.value
+    var contador by rememberSaveable { mutableStateOf(0) }
+    Column(Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        Button(onClick = {contador++}) {
+            Text(text = "Pulsar")
+        }
+
+        Text(
+            text = "He sido pulsado ${contador} veces"
+        )
+    }
+
+
+}
+
+
+@Composable
 fun MyComplexLayout(modifier: Modifier = Modifier) {
     Column(Modifier.fillMaxSize()) {
-        Box(Modifier.fillMaxWidth().weight(1f).background(Color.Cyan), contentAlignment = Alignment.Center) {
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .background(Color.Cyan), contentAlignment = Alignment.Center
+        ) {
             Text(text = "Hola Soy Neto")
         }
         Spacer(Modifier.height(16.dp))
-        Row (Modifier.fillMaxWidth().weight(1f)) {
-            Box(Modifier.weight(1f).fillMaxHeight().background(Color.Red), contentAlignment = Alignment.Center){
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ) {
+            Box(
+                Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .background(Color.Red), contentAlignment = Alignment.Center
+            ) {
                 Text(text = "Hola soy Ernesto")
             }
             Spacer(Modifier.width(16.dp))
-            Box(Modifier.weight(1f).fillMaxHeight().background(Color.Blue), contentAlignment = Alignment.Center){
+            Box(
+                Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .background(Color.Blue), contentAlignment = Alignment.Center
+            ) {
                 Text(text = "Hola soy JacrosDevs")
             }
         }
         Spacer(Modifier.height(16.dp))
-        Box(Modifier.fillMaxWidth().weight(1f).background(Color.Cyan).background(Color.Green), contentAlignment = Alignment.BottomCenter) {
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .background(Color.Cyan)
+                .background(Color.Green), contentAlignment = Alignment.BottomCenter
+        ) {
             Text(text = "Hola soy un humano mas ordinario que el promedio")
         }
     }
@@ -71,35 +124,35 @@ fun MyComplexLayout(modifier: Modifier = Modifier) {
 
 @Composable
 fun MyRow() {
-    Row (
+    Row(
         Modifier
             .fillMaxSize()
             .horizontalScroll(rememberScrollState()),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
 
-    ){
+    ) {
 //        Text(text = "Ejemplo1",Modifier.background(Color.Red).weight(1f))
 //        Text(text = "Ejemplo2",Modifier.background(Color.Blue).weight(1f))
 //        Text(text = "Ejemplo3",Modifier.background(Color.Yellow).weight(1f))
-        Text(text = "Ejemplo1",Modifier.background(Color.Red))
-        Text(text = "Ejemplo2",Modifier.background(Color.Blue))
-        Text(text = "Ejemplo3",Modifier.background(Color.Yellow))
-        Text(text = "Ejemplo1",Modifier.background(Color.Red))
-        Text(text = "Ejemplo2",Modifier.background(Color.Blue))
-        Text(text = "Ejemplo3",Modifier.background(Color.Yellow))
-        Text(text = "Ejemplo1",Modifier.background(Color.Red))
-        Text(text = "Ejemplo2",Modifier.background(Color.Blue))
-        Text(text = "Ejemplo3",Modifier.background(Color.Yellow))
-        Text(text = "Ejemplo1",Modifier.background(Color.Red))
-        Text(text = "Ejemplo2",Modifier.background(Color.Blue))
-        Text(text = "Ejemplo3",Modifier.background(Color.Yellow))
-        Text(text = "Ejemplo1",Modifier.background(Color.Red))
-        Text(text = "Ejemplo2",Modifier.background(Color.Blue))
-        Text(text = "Ejemplo3",Modifier.background(Color.Yellow))
-        Text(text = "Ejemplo1",Modifier.background(Color.Red))
-        Text(text = "Ejemplo2",Modifier.background(Color.Blue))
-        Text(text = "Ejemplo3",Modifier.background(Color.Yellow))
+        Text(text = "Ejemplo1", Modifier.background(Color.Red))
+        Text(text = "Ejemplo2", Modifier.background(Color.Blue))
+        Text(text = "Ejemplo3", Modifier.background(Color.Yellow))
+        Text(text = "Ejemplo1", Modifier.background(Color.Red))
+        Text(text = "Ejemplo2", Modifier.background(Color.Blue))
+        Text(text = "Ejemplo3", Modifier.background(Color.Yellow))
+        Text(text = "Ejemplo1", Modifier.background(Color.Red))
+        Text(text = "Ejemplo2", Modifier.background(Color.Blue))
+        Text(text = "Ejemplo3", Modifier.background(Color.Yellow))
+        Text(text = "Ejemplo1", Modifier.background(Color.Red))
+        Text(text = "Ejemplo2", Modifier.background(Color.Blue))
+        Text(text = "Ejemplo3", Modifier.background(Color.Yellow))
+        Text(text = "Ejemplo1", Modifier.background(Color.Red))
+        Text(text = "Ejemplo2", Modifier.background(Color.Blue))
+        Text(text = "Ejemplo3", Modifier.background(Color.Yellow))
+        Text(text = "Ejemplo1", Modifier.background(Color.Red))
+        Text(text = "Ejemplo2", Modifier.background(Color.Blue))
+        Text(text = "Ejemplo3", Modifier.background(Color.Yellow))
 
     }
 }
@@ -259,6 +312,6 @@ fun MyBox() {
 @Composable
 fun GreetingPreview() {
     JetpackComposeCatalogoTheme {
-        MyComplexLayout()
+        MyStateCompose()
     }
 }
