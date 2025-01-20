@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .padding(16.dp)
                 ) {
-                    MyButtonExample()
+                    MyProgressAdvance()
                 }
             }
         }
