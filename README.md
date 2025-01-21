@@ -13,5 +13,11 @@
 ![Captura desde 2025-01-20 13-21-57](https://github.com/user-attachments/assets/e5d096e2-8298-4b07-827a-bce76989ffdd)
 
 
+## se agrego LineaeProgressIndicator y CircularProgressIndicator
+
+![Circle](https://github.com/user-attachments/assets/8e16aaf7-1006-4c2c-a126-74a70ddf932e)
+![linear](https://github.com/user-attachments/assets/a625cc23-db24-4ea6-b8c3-cd390696b0a1)
+
+
 
 
