@@ -18,6 +18,11 @@
 ![Circle](https://github.com/user-attachments/assets/8e16aaf7-1006-4c2c-a126-74a70ddf932e)
 ![linear](https://github.com/user-attachments/assets/a625cc23-db24-4ea6-b8c3-cd390696b0a1)
 
+# se agrego Switch
+
+![Captura desde 2025-01-20 19-18-57](https://github.com/user-attachments/assets/c668934f-de6f-4f18-b7b7-c4784a478fc6)
+
+
 
 
 
